@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+import random
+for x in range(10):
+    number = random.randint(1, 11)
+
+tries = 1
+
+
+uname = input("Username?")
+
+print("Hello", uname + ".")
+
+question = input("Would you like to play a game? [Y/N] ")
+if question == "N":
+    print("oh....okay")
+
+if question == "Y":
+    print("I am thinking of a number between 1 & 10")
+    guess = int(input("Have a guess: "))
+    if guess > number:
+        print("Guess Lower..")
+if guess < number:
+    print('Guess higher..')
+while guess != number:
+    tries += 1
+    guess = int(input("Try again: "))
+    if guess < number:
+        print("Guess Higher")
+if guess == number:
+    print("You're right! you win! The number was", number, \
+        "and it only", tries, "tries!")
